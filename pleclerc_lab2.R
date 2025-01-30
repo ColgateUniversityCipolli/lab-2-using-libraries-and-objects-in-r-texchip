@@ -1,5 +1,6 @@
 
 library(stringr)
+
 music.subdirs <- list.dirs("MUSIC") # vector with all subdirectories of MUSIC/
 album.indices <- which(str_count(music.subdirs, pattern = "/")==2) # isolate albums
 albums <- music.subdirs[album.indices] # vector with all albums
@@ -29,3 +30,17 @@ for(i in 1:length(albums)){ # albums
 }
 
 close(batfile)
+
+library(jsonlite)
+
+json.file.name <- "The Front Bottoms-Talon Of The Hawk-Au Revoir (Adios).json"
+file.info <- str_split(json.file.name, "-", simplify = T)
+loaded.json <- fromJSON(json.file.name)
+
+avg.loudness <- loaded.json$lowlevel$average_loudness
+mean.spectral.energy <- loaded.json$lowlevel$spectral_energy$mean
+danceability <- loaded.json$rhythm$danceability
+bpm <- loaded.json$rhythm$bpm
+key.key <- loaded.json$tonal$key_key
+key.scale <- loaded.json$tonal$key_scale
+track.length <- loaded.json$metadata$audio_properties$length
