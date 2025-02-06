@@ -98,18 +98,11 @@ This document provides a basic template for the 2-page labs we will complete eac
 
 \section{Introduction}
 
-In 2018, The Front Bottoms and Manchester Orchestra collaborated on a song entitled ``Allen Town". Our goal in this project is to determine which band contributed more to the song by analyzing the music from both bands and comparing data from the new song to their respective collections. In this lab, we set up the code for processing each individual track, building a batch file containing the specific lines of code for each song that we can run to collect data from Essentia's program.
-
-\subsection{Intro Subsection}
-You might need/want to discuss the topics in subsections. Or, you may have multiple questions.
-
+In 2018, The Front Bottoms and Manchester Orchestra collaborated on a song entitled ``Allen Town". Our goal in this project is to determine which band contributed more to the song by analyzing the music from both bands and comparing data from the new song to their respective collections. In this lab, we set up the code for processing each individual track, building a batch file containing the specific lines of code for each song that we can run to collect data using Essentia's executable file.
 
 \section{Methods}
-Describe the data you are working with, if applicable. Describe the specific process you will follow to answer the question at hand. This does not mean you should write something like this.
-\begin{quote}
-\textit{I did this and then I did that and then I did this other thing and then..., and then..., and then...}
-\end{quote}
-Instead, it should provide a clear and concise narrative that flows from the problem specification in the Introduction to how you will approach answering it. This is where I would expect to see some citations for \texttt{R} packages you will use to conduct the statistical analysis reported in the Results section.
+
+We began by utilizing tools from the \texttt{stringr} package for \texttt{R} to collect the names of tracks, albums, and artists \citep{str}. We combined them to create unique names for each track's output \texttt{.json} file. We then utilized the \texttt{writeLines()} function to write a line of code specific to each track into a batch file. Lastly, we took the sample song Au Revoir (Adios) by The Front Bottoms and analyzed specific characteristics of the song with the \texttt{jsonlite} package for \texttt{R} \citep{jsl}.
 
 
 \subsection{Methods Subsection}
